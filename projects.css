@@ -1,0 +1,347 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, #111, #666);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+   box-sizing: border-box; /* ensures padding doesn’t change width */
+}
+
+header h1 {
+  font-family: 'Georgia', serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 50px;
+    background: linear-gradient(180deg, #a83bf3, #ffcc00);
+    position: relative;
+    height: 70px;
+    box-sizing: border-box; /* ensures width includes padding */
+}
+
+nav::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background-color: #1b1b1b;
+  border-radius: 45px;
+  z-index: 0;
+}
+
+nav a {
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  color: white;
+  margin: 0 25px;
+  font-size: 18px;
+  transition: 0.3s;
+  margin: 0 25px; /* keep spacing same */
+    white-space: nowrap; /* prevents wrapping */
+}
+
+
+nav a:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px #a83bf3);
+}
+
+nav a.active {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px #a83bf3);
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+    text-align: center;
+    padding: 60px 80px;
+}
+
+.projects-section h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* PROJECT CARD STYLE */
+.project-card {
+    position: relative;
+    background-color: #1b1b1b;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 25px auto;
+    overflow: hidden;
+    padding: 4px;
+    background: linear-gradient(180deg, #a83bf3, #ffcc00);
+    transition: all 0.3s ease; /* smooth hover animation */
+}
+
+.project-card .content {
+    background-color: #1b1b1b;
+    border-radius: 18px;
+    padding: 15px 25px;
+}
+
+.project-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #ccc;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.project-card button {
+    background: #e8e8e8;
+    color: #000;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.project-card button:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px #a83bf3);
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px #a83bf3);
+}
+
+/* ==================== MOBILE FIRST (max-width: 768px) ==================== */
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        font-size: 17px;
+    }
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 10px;
+        gap: 25px;
+    }
+
+    /* .content {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin: 0;
+    } */
+
+    .projects-section {
+        padding: 0px 0px;
+    }
+
+    .projects-section h2 {
+        font-size: 24px;
+    }
+
+    .project-card {
+        width: 100%;
+        padding: 4px;
+        border-radius: 20px;
+        margin: 20px 0;
+    }
+
+    .project-card .content {
+        padding: 15px;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+    }
+
+    .project-card p {
+        font-size: 14px;
+    }
+
+    .project-card button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ==================== TABLET (769px - 1024px) ==================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    body {
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        width: 90%;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 5px 15px;
+        font-size: 17px;
+    }
+
+    .main {
+        flex-direction: column; /* stack on smaller tablets */
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 10px;
+        gap: 25px;
+    }
+
+    /* .content {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin: 0;
+    } */
+    .projects-section {
+        padding: 50px 40px;
+    }
+
+    .projects-section h2 {
+        font-size: 28px;
+    }
+
+    .project-card {
+        max-width: 600px;
+        margin: 25px auto;
+        padding: 4px;
+        border-radius: 18px;
+    }
+
+    .project-card .content {
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 20px;
+    }
+
+    .project-card p {
+        font-size: 15px;
+    }
+
+    .project-card button {
+        padding: 10px 22px;
+        font-size: 15px;
+    }
+}
+
+/* ==================== DESKTOP (default) ==================== */
+/* Already defined in your existing CSS, no change needed */
+
+/* Tablet layout */
+@media (max-width: 1024px) {
+    body {
+        height: auto;
+        padding: 0;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    nav {
+        width: 95%;
+        margin-top: 0px;
+        justify-content: center;
+    }
+
+    .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .project-card {
+        max-width: 600px;
+        margin: 25px auto;
+        padding: 4px;
+        border-radius: 18px;
+    }
+
+    .projects-section {
+        padding: 20px 20px;
+    }
+}
+
